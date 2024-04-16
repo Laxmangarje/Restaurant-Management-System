@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport"
+	content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<title>Restaurant Management System</title>
+
+<!-- Bootstrap CSS -->
+<link rel="stylesheet"
+	href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+<!-- Icon Font Stylesheet -->
+<link
+	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css"
+	rel="stylesheet">
+<link
+	href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css"
+	rel="stylesheet">
+<link rel="stylesheet" type="text/css" th:href="@{/css/style.css}" />
+
+<style th:inline="text">
+body {
+	font-family: 'Arial', sans-serif;
+	text-align: center;
+	margin: 50px;
+	font-size: 18px
+}
+
+quote {
+	font-style: italic;
+	margin-bottom: 20px;
+}
+</style>
+
+</head>
+<body>
+	<div class=""
+		style="background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQNSLYjAnnvd8223t4uLF4_KWDB-v4ax6RktQ&usqp=CAU'); height: auto;">
+		<div class="container-xxl position-relative p-0">
+			<nav
+				class="navbar navbar-expand-lg navbar-dark  px-4 px-lg-5 py-3 py-lg-0">
+				<a th:href="@{/index}" class="navbar-brand p-0"> <i
+					class="fa fa-utensils me-3"></i> Divz Delights
+				</a>
+				<button class="navbar-toggler" type="button"
+					data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+				</button>
+				<div class="collapse navbar-collapse" id="navbarCollapse"></div>
+
+				<div class="navbar-nav ms-auto py-0 pe-4">
+					<a th:href="@{/index}" class="nav-item nav-link active">Home</a> <a
+						th:href="@{/menu}" class="nav-item nav-link active">Menu's</a>
+					<a th:href="@{/about}" class="nav-item nav-link active">About</a> <a
+						th:href="@{/gallery}" class="nav-item nav-link active">Our-Gallery</a>
+					<a th:href="@{/events}" class="nav-item nav-link active">Events</a>
+					<a th:href="@{/contact}" class="nav-item nav-link active">Contact-Us</a>
+					<a th:href="@{/Cust/New}" class="nav-item nav-link active">New
+						Registration</a> <a th:href="@{/SignInPage}" class="nav-item nav-link">Signin</a>
+				</div>
+			</nav>
+		</div>
+	</div>
+		<!-- Menu Start -->
+		<div class="container-xxl py-5">
+				<div class="tab-class text-center wow fadeInUp" data-wow-delay="0.1s">
+					<ul class="nav nav-pills d-inline-flex justify-content-center border-bottom mb-5">
+						<li class="nav-item">
+							<a class="d-flex align-items-center text-start mx-3 ms-0 pb-3 active" data-bs-toggle="pill"
+								th:href="@{/menu}">
+								<i class="fa fa-coffee fa-2x text-primary"></i>
+								<div class="ps-3">
+									<small class="text-body">Popular</small>
+									<h6 class="mt-n1 mb-0"><a href="/getpopularbreakfast" class="mt-n1 mb-0"> Breakfast </a></h6>
+                                 </div>
+							</a>
+						</li>
+						<li class="nav-item">
+							<a class="d-flex align-items-center text-start mx-3 pb-3" data-bs-toggle="pill"
+								href="#tab-2">
+								<i class="fa fa-hamburger fa-2x text-primary"></i>
+								<div class="ps-3">
+									<small class="text-body">Special</small>
+									<h6 class="mt-n1 mb-0"><a href="/getpopularlunch" class="mt-n1 mb-0"> Lunch </a></h6>
+								</div>
+							</a>
+						</li>
+						<li class="nav-item">
+							<a class="d-flex align-items-center text-start mx-3 me-0 pb-3" data-bs-toggle="pill"
+								href="#tab-3">
+								<i class="fa fa-utensils fa-2x text-primary"></i>
+								<div class="ps-3">
+									<small class="text-body">Lovely</small>
+									<h6 class="mt-n1 mb-0"><a href="/getpopulardinner" class="mt-n1 mb-0"> Dinner </a></h6>
+								</div>
+							</a>
+						</li>
+					</ul>
+					<div class="tab-content">
+						<div id="tab-1" class="tab-pane fade show p-0 active">
+							<div class="row g-4">
+								<div class="col-lg-6">
+									<div class="d-flex align-items-center">
+										<img class="flex-shrink-0 img-fluid rounded" src="img/menu-1.jpg" alt=""
+											style="width: 80px;">
+										<div class="w-100 d-flex flex-column text-start ps-4">
+											<h5 class="d-flex justify-content-between border-bottom pb-2">
+												<span>Idli with Sambar and Coconut Chutney</span>
+												<span class="text-primary">Price: ₹40</span>
+											</h5>
+											
+												
+										</div>
+									</div>
+								</div>
+								<div class="col-lg-6">
+									<div class="d-flex align-items-center">
+										<img class="flex-shrink-0 img-fluid rounded" src="img/menu-2.jpg" alt=""
+											style="width: 80px;">
+										<div class="w-100 d-flex flex-column text-start ps-4">
+											<h5 class="d-flex justify-content-between border-bottom pb-2">
+												<span>Poha</span>
+												<span class="text-primary">Price: ₹30</span>
+											</h5>
+											
+										</div>
+									</div>
+								</div>
+								<div class="col-lg-6">
+									<div class="d-flex align-items-center">
+										<img class="flex-shrink-0 img-fluid rounded" src="img/menu-3.jpg" alt=""
+											style="width: 80px;">
+										<div class="w-100 d-flex flex-column text-start ps-4">
+											<h5 class="d-flex justify-content-between border-bottom pb-2">
+												<span>Aloo Paratha with Curd</span>
+												<span class="text-primary">Price: ₹60</span>
+											</h5>
+								</div>
+									</div>
+								</div>
+								<div class="col-lg-6">
+									<div class="d-flex align-items-center">
+										<img class="flex-shrink-0 img-fluid rounded" src="img/menu-4.jpg" alt=""
+											style="width: 80px;">
+										<div class="w-100 d-flex flex-column text-start ps-4">
+											<h5 class="d-flex justify-content-between border-bottom pb-2">
+												<span>Chole Bhature</span>
+												<span class="text-primary">Price: ₹80</span>
+											</h5>
+											
+												
+										</div>
+									</div>
+								</div>
+								<div class="col-lg-6">
+									<div class="d-flex align-items-center">
+										<img class="flex-shrink-0 img-fluid rounded" src="img/menu-5.jpg" alt=""
+											style="width: 80px;">
+										<div class="w-100 d-flex flex-column text-start ps-4">
+											<h5 class="d-flex justify-content-between border-bottom pb-2">
+												<span>Rava Upma</span>
+												<span class="text-primary">Price: ₹40</span>
+											</h5>
+											
+												
+										</div>
+									</div>
+								</div>
+								<div class="col-lg-6">
+									<div class="d-flex align-items-center">
+										<img class="flex-shrink-0 img-fluid rounded" src="img/menu-6.jpg" alt=""
+											style="width: 80px;">
+										<div class="w-100 d-flex flex-column text-start ps-4">
+											<h5 class="d-flex justify-content-between border-bottom pb-2">
+												<span>Misal Pav</span>
+												<span class="text-primary">Price: ₹50</span>
+											</h5>
+											
+												
+										</div>
+									</div>
+								</div>
+								<div class="col-lg-6">
+									<div class="d-flex align-items-center">
+										<img class="flex-shrink-0 img-fluid rounded" src="img/menu-7.jpg" alt=""
+											style="width: 80px;">
+										<div class="w-100 d-flex flex-column text-start ps-4">
+											<h5 class="d-flex justify-content-between border-bottom pb-2">
+												<span>Sabudana Khichdi</span>
+												<span class="text-primary">Price: ₹50</span>
+											</h5>
+											
+												
+										</div>
+									</div>
+								</div>
+								<div class="col-lg-6">
+									<div class="d-flex align-items-center">
+										<img class="flex-shrink-0 img-fluid rounded" src="img/menu-8.jpg" alt=""
+											style="width: 80px;">
+										<div class="w-100 d-flex flex-column text-start ps-4">
+											<h5 class="d-flex justify-content-between border-bottom pb-2">
+												<span>Aloo Tikki</span>
+												<span class="text-primary">Price: ₹25</span>
+											</h5>
+											
+												
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div id="tab-2" class="tab-pane fade show p-0">
+							<div class="row g-4">
+								<div class="col-lg-6">
+									<div class="d-flex align-items-center">
+										<img class="flex-shrink-0 img-fluid rounded" src="img/menu-1.jpg" alt=""
+											style="width: 80px;">
+										<div class="w-100 d-flex flex-column text-start ps-4">
+											<h5 class="d-flex justify-content-between border-bottom pb-2">
+												<span>Chicken Burger</span>
+												<span class="text-primary">$115</span>
+											</h5>
+											
+												
+										</div>
+									</div>
+								</div>
+								<div class="col-lg-6">
+									<div class="d-flex align-items-center">
+										<img class="flex-shrink-0 img-fluid rounded" src="img/menu-2.jpg" alt=""
+											style="width: 80px;">
+										<div class="w-100 d-flex flex-column text-start ps-4">
+											<h5 class="d-flex justify-content-between border-bottom pb-2">
+												<span>Chicken Burger</span>
+												<span class="text-primary">$115</span>
+											</h5>
+											
+												
+										</div>
+									</div>
+								</div>
+								<div class="col-lg-6">
+									<div class="d-flex align-items-center">
+										<img class="flex-shrink-0 img-fluid rounded" src="img/menu-3.jpg" alt=""
+											style="width: 80px;">
+										<div class="w-100 d-flex flex-column text-start ps-4">
+											<h5 class="d-flex justify-content-between border-bottom pb-2">
+												<span>Chicken Burger</span>
+												<span class="text-primary">$115</span>
+											</h5>
+											
+												
+										</div>
+									</div>
+								</div>
+								<div class="col-lg-6">
+									<div class="d-flex align-items-center">
+										<img class="flex-shrink-0 img-fluid rounded" src="img/menu-4.jpg" alt=""
+											style="width: 80px;">
+										<div class="w-100 d-flex flex-column text-start ps-4">
+											<h5 class="d-flex justify-content-between border-bottom pb-2">
+												<span>Chicken Burger</span>
+												<span class="text-primary">$115</span>
+											</h5>
+											
+												
+										</div>
+									</div>
+								</div>
+								<div class="col-lg-6">
+									<div class="d-flex align-items-center">
+										<img class="flex-shrink-0 img-fluid rounded" src="img/menu-5.jpg" alt=""
+											style="width: 80px;">
+										<div class="w-100 d-flex flex-column text-start ps-4">
+											<h5 class="d-flex justify-content-between border-bottom pb-2">
+												<span>Chicken Burger</span>
+												<span class="text-primary">$115</span>
+											</h5>
+											
+												
+										</div>
+									</div>
+								</div>
+								<div class="col-lg-6">
+									<div class="d-flex align-items-center">
+										<img class="flex-shrink-0 img-fluid rounded" src="img/menu-6.jpg" alt=""
+											style="width: 80px;">
+										<div class="w-100 d-flex flex-column text-start ps-4">
+											<h5 class="d-flex justify-content-between border-bottom pb-2">
+												<span>Chicken Burger</span>
+												<span class="text-primary">$115</span>
+											</h5>
+											
+												
+										</div>
+									</div>
+								</div>
+								<div class="col-lg-6">
+									<div class="d-flex align-items-center">
+										<img class="flex-shrink-0 img-fluid rounded" src="img/menu-7.jpg" alt=""
+											style="width: 80px;">
+										<div class="w-100 d-flex flex-column text-start ps-4">
+											<h5 class="d-flex justify-content-between border-bottom pb-2">
+												<span>Chicken Burger</span>
+												<span class="text-primary">$115</span>
+											</h5>
+											
+												
+										</div>
+									</div>
+								</div>
+								<div class="col-lg-6">
+									<div class="d-flex align-items-center">
+										<img class="flex-shrink-0 img-fluid rounded" src="img/menu-8.jpg" alt=""
+											style="width: 80px;">
+										<div class="w-100 d-flex flex-column text-start ps-4">
+											<h5 class="d-flex justify-content-between border-bottom pb-2">
+												<span>Chicken Burger</span>
+												<span class="text-primary">$115</span>
+											</h5>
+											
+												
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div id="tab-3" class="tab-pane fade show p-0">
+							<div class="row g-4">
+								<div class="col-lg-6">
+									<div class="d-flex align-items-center">
+										<img class="flex-shrink-0 img-fluid rounded" src="img/menu-1.jpg" alt=""
+											style="width: 80px;">
+										<div class="w-100 d-flex flex-column text-start ps-4">
+											<h5 class="d-flex justify-content-between border-bottom pb-2">
+												<span>Chicken Burger</span>
+												<span class="text-primary">$115</span>
+											</h5>
+											
+												
+										</div>
+									</div>
+								</div>
+								<div class="col-lg-6">
+									<div class="d-flex align-items-center">
+										<img class="flex-shrink-0 img-fluid rounded" src="img/menu-2.jpg" alt=""
+											style="width: 80px;">
+										<div class="w-100 d-flex flex-column text-start ps-4">
+											<h5 class="d-flex justify-content-between border-bottom pb-2">
+												<span>Chicken Burger</span>
+												<span class="text-primary">$115</span>
+											</h5>
+											
+												
+										</div>
+									</div>
+								</div>
+								<div class="col-lg-6">
+									<div class="d-flex align-items-center">
+										<img class="flex-shrink-0 img-fluid rounded" src="img/menu-3.jpg" alt=""
+											style="width: 80px;">
+										<div class="w-100 d-flex flex-column text-start ps-4">
+											<h5 class="d-flex justify-content-between border-bottom pb-2">
+												<span>Chicken Burger</span>
+												<span class="text-primary">$115</span>
+											</h5>
+											
+												
+										</div>
+									</div>
+								</div>
+								<div class="col-lg-6">
+									<div class="d-flex align-items-center">
+										<img class="flex-shrink-0 img-fluid rounded" src="img/menu-4.jpg" alt=""
+											style="width: 80px;">
+										<div class="w-100 d-flex flex-column text-start ps-4">
+											<h5 class="d-flex justify-content-between border-bottom pb-2">
+												<span>Chicken Burger</span>
+												<span class="text-primary">$115</span>
+											</h5>
+											
+												
+										</div>
+									</div>
+								</div>
+								<div class="col-lg-6">
+									<div class="d-flex align-items-center">
+										<img class="flex-shrink-0 img-fluid rounded" src="img/menu-5.jpg" alt=""
+											style="width: 80px;">
+										<div class="w-100 d-flex flex-column text-start ps-4">
+											<h5 class="d-flex justify-content-between border-bottom pb-2">
+												<span>Chicken Burger</span>
+												<span class="text-primary">$115</span>
+											</h5>
+											
+												
+										</div>
+									</div>
+								</div>
+								<div class="col-lg-6">
+									<div class="d-flex align-items-center">
+										<img class="flex-shrink-0 img-fluid rounded" src="img/menu-6.jpg" alt=""
+											style="width: 80px;">
+										<div class="w-100 d-flex flex-column text-start ps-4">
+											<h5 class="d-flex justify-content-between border-bottom pb-2">
+												<span>Chicken Burger</span>
+												<span class="text-primary">$115</span>
+											</h5>
+											
+												
+										</div>
+									</div>
+								</div>
+								<div class="col-lg-6">
+									<div class="d-flex align-items-center">
+										<img class="flex-shrink-0 img-fluid rounded" src="img/menu-7.jpg" alt=""
+											style="width: 80px;">
+										<div class="w-100 d-flex flex-column text-start ps-4">
+											<h5 class="d-flex justify-content-between border-bottom pb-2">
+												<span>Chicken Burger</span>
+												<span class="text-primary">$115</span>
+											</h5>
+											
+												
+										</div>
+									</div>
+								</div>
+								<div class="col-lg-6">
+									<div class="d-flex align-items-center">
+										<img class="flex-shrink-0 img-fluid rounded" src="img/menu-8.jpg" alt=""
+											style="width: 80px;">
+										<div class="w-100 d-flex flex-column text-start ps-4">
+											<h5 class="d-flex justify-content-between border-bottom pb-2">
+												<span>Chicken Burger</span>
+												<span class="text-primary">$115</span>
+											</h5>
+											
+												
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		<!-- Menu End -->
+			<!-- Bootstrap Footer -->
+	<footer class="bg-dark text-white text-center py-3">
+		<p>&copy; 2024 Divz Delights</p>
+		<!-- Facebook -->
+		<a class="btn text-white" data-mdb-ripple-init
+			style="background-color: #3b5998;" href="#!" role="button"> <i
+			class="fab fa-facebook-f"></i>
+		</a>
+
+		<!-- Twitter -->
+		<a class="btn text-white" data-mdb-ripple-init
+			style="background-color: #55acee;" href="#!" role="button"> <i
+			class="fab fa-twitter"></i>
+		</a>
+
+		<!-- Instagram -->
+		<a class="btn text-white" data-mdb-ripple-init
+			style="background-color: #ac2bac;" href="#!" role="button"> <i
+			class="fab fa-instagram"></i>
+		</a>
+
+		<!-- Whatsapp -->
+		<a class="btn text-white" data-mdb-ripple-init
+			style="background-color: #25d366;" href="#!" role="button"> <i
+			class="fab fa-whatsapp"></i>
+		</a>
+	</footer>
+		<!-- Footer End -->
+</body>
+
+</html>
